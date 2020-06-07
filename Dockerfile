@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-MAINTAINER runscible@gmail.com
+MAINTAINER runscible
 
 ENV PYTHONUNBUFFERED 1
 
