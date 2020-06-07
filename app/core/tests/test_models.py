@@ -21,3 +21,20 @@ class ModelTests(TestCase):
         user = get_user_model().objects.create_user(email, 'test123')
         
         self.assertEqual(user.email, email.lower())
+
+    def test_new_user_valid_email(self):
+        """ test for check if created user has a valid email """
+
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user(None, 'test123')     
+
+
+    def test_super_user_created(self):
+        """" test super user created """
+        user = get_user_model().objects.create_super_user(
+            'test@test.com',
+            'test123'
+        )
+
+        self.assertTrue(user.is_superuser)
+        self.assertTrue(user.is_staff)
