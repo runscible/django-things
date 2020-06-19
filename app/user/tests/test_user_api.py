@@ -20,7 +20,7 @@ class PublicUserApiTests(TestCase):
 
     def setUp(self):
         self.client = APIClient()
-
+ 
     def test_create_valid_user_success(self):
         """test that check if a valid user has created"""
         payload = {
